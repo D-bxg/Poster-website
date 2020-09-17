@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import Details from './Details';
+
+import App from './components/App' ;
+import Details from './components/Details';
 import * as serviceWorker from './serviceWorker';
 
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
@@ -11,7 +11,7 @@ import { createHashHistory } from "history";
 const history = createHashHistory();
 
 class RouterConfig extends React.Component {
-    render() {
+    render() { 
         return (
             <Router history={history}>
                 <Switch>
