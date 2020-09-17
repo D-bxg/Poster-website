@@ -28,7 +28,7 @@
     float: left;
     width: 450px;
     height: 60px;
-    background-image: url('../img/title\(450x60\).png');
+    background-image: url('../images/title\(450x60\).png');
   }
 
  
@@ -63,7 +63,7 @@
     float: left;
     width: 450px;
     height:60px;
-    background-image: url('../img/footer\(450x60\).png');
+    background-image: url('../images/footer\(450x60\).png');
   }
 
   .App .footer .footer_index{
