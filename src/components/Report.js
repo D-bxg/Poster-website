@@ -1,8 +1,8 @@
 import React from 'react';
-import '../css/Report.css';
-import '../css/tools.css';
 import { useQuery } from 'react-apollo';
 import { gql } from 'apollo-boost';
+import  '../assets/css/AllReports.css';
+import '../assets/css/tools.css';
 
 const QUERY_REPORT_DETAILS = gql`
   query ReportsById($report_id: Int) {
