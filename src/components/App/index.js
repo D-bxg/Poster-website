@@ -1,10 +1,10 @@
 import React from 'react';
-
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
+// React的Router组件
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { createHashHistory } from "history";
-
-import Home from './Home' ;
-import Details from './Details';
+//页面
+import Home from './Home' ;//导航页面
+import Details from './Details';//详情页面
 
 const history = createHashHistory();
 
@@ -16,8 +16,8 @@ class App extends React.Component {
                     <Route path='/' exact render={() => (
                         <Redirect to='/index/1' />
                     )} />
-                    <Route path='/index/:majorid' component={Home} />{/*此处为导航组件*/}
-                    <Route path="/details/r/:reportid/n/:num" component={Details} />{/*此处为导航后到达组件*/}
+                    <Route path='/index/:majorid' component={Home} />{/*此处为导航页面*/}
+                    <Route path="/details/r/:reportid/n/:num" component={Details} />{/*此处为导航页面*/}
                 </Switch>
             </Router>
         )
