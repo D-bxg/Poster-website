@@ -30,7 +30,7 @@ const QUERY_REPORT_DETAILS = gql`
     }
 }
 `;
-export function ReportDetails(reportid) {
+export default function ReportDetails(reportid) {
   // Polling: provides near-real-time synchronization with
   // your server by causing a query to execute periodically
   // at a specified interval

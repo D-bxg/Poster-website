@@ -1,7 +1,7 @@
 import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { ReportsInfo } from "./AllReports.js";
+import ReportsInfo from "../AllReports";
 import {Link} from 'react-router-dom';
 
 const client = new ApolloClient({

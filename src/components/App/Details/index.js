@@ -1,7 +1,7 @@
 import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { ReportDetails } from "./Report.js";
+import ReportDetails from "../../Report";
 
 const client = new ApolloClient({
   uri: 'http://47.104.225.253/graphql/', // your GraphQL Server 
