@@ -2,8 +2,6 @@ import React from 'react';
 import { useQuery } from 'react-apollo';
 import { gql } from 'apollo-boost';
 import { Link } from 'react-router-dom';
-import  '../assets/css/AllReports.css';
-import '../assets/css/tools.css';
 
 const QUERY_REPORTS = gql`
   query ReportsById($major_id: Int) {
@@ -28,7 +26,7 @@ const QUERY_REPORTS = gql`
     }
 }
 `;
-export default function ReportsInfo(majorid) {
+export default function ReportLists(majorid) {
   // Polling: provides near-real-time synchronization with
   // your server by causing a query to execute periodically
   // at a specified interval
