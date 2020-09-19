@@ -1,6 +1,6 @@
 import React from 'react';
 // React的Router组件
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { createHashHistory } from "history";
 //页面
 import Home from './Home' ;//导航页面

@@ -1,10 +1,39 @@
 import React from 'react';
-// Apollo组件引用
-import { graphql } from 'react-apollo';
-import { gql } from 'apollo-boost';
-// React的Router的Link标签引用
-import { Link } from 'react-router-dom';
-import { render } from '@testing-library/react';
+// // Apollo组件引用
+// import { graphql, useQuery } from 'react-apollo';
+// import { gql } from 'apollo-boost';
+// // React的Router的Link标签引用
+// import { Link } from 'react-router-dom';
+// import { render } from '@testing-library/react';
+
+// const QUERY_REPORTLISTS = gql`query {
+//   # Note that fields names become camelcased
+//   reportsById{
+//     edges {
+//       node {
+//         id, 
+//         date, 
+//         time, 
+//         name, 
+//         occupation, 
+//         title, 
+//         content,
+//         platform, step, 
+//         reportId,
+//         majorId,
+//         priorId,
+//         nextId, 
+//       }
+//     }
+//   }
+// }`
+
+// const { date, loading } = useQuery(
+//   QUERY_REPORTLISTS,
+//   {
+//     pollInterval: 500
+//   }
+// );
 
 class ReportLists extends React.Component {
   constructor(props){
@@ -12,7 +41,6 @@ class ReportLists extends React.Component {
     this.state = {
       
     }
-    console.log(this.props)
   }
   // Polling: provides near-real-time synchronization with
   // your server by causing a query to execute periodically
