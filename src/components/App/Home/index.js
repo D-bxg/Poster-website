@@ -24,9 +24,9 @@ class Home extends React.Component{
       <div className="">
         {/* 头 */}
         <Row>
-          <header>
+
             <Col span = {24}><Header></Header></Col>
-          </header>
+    
         </Row>
         {/* 主体 */}
         <Row>
@@ -41,9 +41,9 @@ class Home extends React.Component{
         </Row>
         {/* 脚 */}
         <Row>
-          <footer>
+          
             <Col span = {24}>a</Col>
-          </footer>
+          
         </Row>
       </div>
       // <ApolloProvider client={client}>

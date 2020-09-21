@@ -13,7 +13,7 @@ class index extends React.Component {
     }
     render() {
         return (
-            <Layout style={{ padding: '0 24px 24px' }}>
+            <Layout style={{margin: '6.4rem 0 0', padding: '0 24px 24px' , width: '100%', height: '100vh' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                 <Breadcrumb.Item>Home</Breadcrumb.Item>
                 <Breadcrumb.Item>List</Breadcrumb.Item>

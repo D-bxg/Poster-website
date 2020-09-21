@@ -1,12 +1,14 @@
 import React from 'react';
 
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+
+import Date from '../Date';
 
 import './style.css';
 
 const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+
 
 class index extends React.Component {
     constructor(props) {
@@ -15,13 +17,15 @@ class index extends React.Component {
     }
     render() {
         return (
-            <Sider width={200} className="site-layout-background">
+            <Layout style={{marginTop: "6.4rem",width: '100%', height: '100vh'}}  >
+            
+                <Date></Date>
                 <Menu
                 mode="inline"
-                defaultSelectedKeys={['1']}
                 defaultOpenKeys={['sub1']}
-                style={{ height: '100%', borderRight: 0 }}
+                defaultSelectedKeys={['1']}
                 >
+                
                 <SubMenu key="sub1" icon={<UserOutlined />} title="subnav 1">
                     <Menu.Item key="1">option1</Menu.Item>
                     <Menu.Item key="2">option2</Menu.Item>
@@ -41,7 +45,8 @@ class index extends React.Component {
                     <Menu.Item key="12">option12</Menu.Item>
                 </SubMenu>
                 </Menu>
-            </Sider>
+            
+            </Layout>
         );
     }
 }
