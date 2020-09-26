@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Calendar } from 'antd';
 
-class index extends React.Component {
+class Date extends React.Component {
     constructor(props) {
         super(props);
         this.state = {  };
@@ -21,4 +21,4 @@ class index extends React.Component {
     }
 }
 
-export default index;
+export default Date;

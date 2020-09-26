@@ -2,8 +2,8 @@ import React from 'react';
 // ant design的引用
 import { Row, Col } from 'antd';
 // Apollo引用
-// import ApolloClient from 'apollo-boost';
-// import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
 // React的Router的Link标签引用
 // import {Link} from 'react-router-dom';
 // 自定义组件引用
@@ -14,14 +14,15 @@ import Sider from '../../Sider';
 // 引入样式
 import './style.css';
 
-// const client = new ApolloClient({
-//     uri: 'http://47.104.225.253/graphql/', // your GraphQL Server 
-//   });
+const client = new ApolloClient({
+    uri: 'http://182.92.176.49/graphql/', // your GraphQL Server 
+  });
   
 class Home extends React.Component{
   render(){
     return(
-      <div className="">
+      <ApolloProvider client={client}>
+      
         {/* 头 */}
         <Row>
 
@@ -45,7 +46,8 @@ class Home extends React.Component{
             <Col span = {24}>a</Col>
           
         </Row>
-      </div>
+      
+      </ApolloProvider>
       // <ApolloProvider client={client}>
       //   <ReportLists></ReportLists>
       //   {/* <div className="App"> */}

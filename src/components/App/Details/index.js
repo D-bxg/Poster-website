@@ -1,13 +1,13 @@
 import React from 'react';
 // Apollo组件
-// import ApolloClient from 'apollo-boost';
-// import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
 //自定义组件
 // import ReportDetails from "../../Report";//详情组件，稍后会把该组件进行拆分（2020年9月18日09:58:25）
 
-// const client = new ApolloClient({
-//   uri: 'http://47.104.225.253/graphql/', // your GraphQL Server 
-// });
+const client = new ApolloClient({
+  uri: 'http://182.92.176.49/graphql/', // your GraphQL Server 
+});
 
 class Details extends React.Component{
   constructor(props){
@@ -19,17 +19,15 @@ class Details extends React.Component{
 
   render(){
       return(
-        <React.Fragment>
-
-        </React.Fragment>
-        // <ApolloProvider client={client}>
         
-        //   {/* <ReportDetails 
-        //     reportid={this.props.match.params.reportid} 
-        //     num={this.props.match.params.num}
-        //   />此处为细节页面组件 */}
+        <ApolloProvider client={client}>
         
-        // </ApolloProvider>
+          {/* <ReportDetails 
+            reportid={this.props.match.params.reportid} 
+            num={this.props.match.params.num}
+          />此处为细节页面组件 */}
+        
+        </ApolloProvider>
         
       )
   }
