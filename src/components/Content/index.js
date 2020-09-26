@@ -9,15 +9,17 @@ const { Content, } = Layout;
 class index extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = { 
+            majorid : props.majorid,
+         };
     }
     render() {
         return (
-            <Layout style={{margin: '6.4rem 0 0', padding: '0 24px 24px' , width: '100%', height: '100vh' }}>
+            <Layout style={{ padding: '0 24px 24px' , height: '100vh' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
-                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>List</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
+                    <Breadcrumb.Item>Home</Breadcrumb.Item>
+                    <Breadcrumb.Item>List</Breadcrumb.Item>
+                    <Breadcrumb.Item>App</Breadcrumb.Item>
                 </Breadcrumb>
                 <Content
                 className="site-layout-background"

@@ -1,6 +1,6 @@
 import React from 'react';
 // ant design的引用
-import { Row, Col } from 'antd';
+import { Row, Col, Layout } from 'antd';
 // Apollo引用
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
@@ -30,16 +30,16 @@ class Home extends React.Component{
     
         </Row>
         {/* 主体 */}
-        <Row>
+        
         {/* 侧边栏 */}
-
-          <Col span = {4}><Sider></Sider></Col>
+        <Layout style={{marginTop: "6.3rem", height: '100vh'}}>
+          <Sider></Sider>
 
         {/* 文章栏 */}
 
-          <Col span = {20}><Content></Content></Col>
+         <Content majorid = {this.props.match.params.majorid}></Content>
 
-        </Row>
+         </Layout>
         {/* 脚 */}
         <Row>
           

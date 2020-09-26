@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Calendar } from 'antd';
 
+import './style.css';
+
 class Date extends React.Component {
     constructor(props) {
         super(props);
@@ -14,8 +16,8 @@ class Date extends React.Component {
 
     render() {
         return (
-            <div theme="dark" >
-                <Calendar style={{ width: '100%', margin: '0 0 2rem' }} fullscreen={false} onPanelChange={this.onPanelChange}  />
+            <div className="site-calendar-demo-card">
+                <Calendar fullscreen={false} onPanelChange={this.onPanelChange} />
             </div>
         );
     }

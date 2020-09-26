@@ -1,3 +1,6 @@
+/**
+ * 此处是用于配置路由的。
+ */
 import React from 'react';
 // React的Router组件
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
