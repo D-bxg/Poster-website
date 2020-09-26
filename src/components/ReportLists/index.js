@@ -1,47 +1,61 @@
 import React from 'react';
 // // Apollo组件引用
-// import { graphql, useQuery } from 'react-apollo';
-// import { gql } from 'apollo-boost';
+import { graphql, useQuery } from 'react-apollo';
+import { gql } from 'apollo-boost';
 // // React的Router的Link标签引用
 // import { Link } from 'react-router-dom';
 // import { render } from '@testing-library/react';
 
-// const QUERY_REPORTLISTS = gql`query {
-//   # Note that fields names become camelcased
-//   reportsById{
-//     edges {
-//       node {
-//         id, 
-//         date, 
-//         time, 
-//         name, 
-//         occupation, 
-//         title, 
-//         content,
-//         platform, step, 
-//         reportId,
-//         majorId,
-//         priorId,
-//         nextId, 
-//       }
-//     }
-//   }
-// }`
-
-// const { date, loading } = useQuery(
-//   QUERY_REPORTLISTS,
-//   {
-//     pollInterval: 500
-//   }
-// );
-
-class ReportLists extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      
+const QUERY_REPORTS = gql`
+  query ReportsById($report_id: Int){
+  # Note that fields names become camelcased
+    reportsById(reportId: $report_id){
+      edges {
+        node {
+          id, 
+          date, 
+          time, 
+          name, 
+          occupation, 
+          title, 
+          content,
+          platform,
+          step, 
+          reportId,
+          majorId,
+          priorId,
+          nextId,
+        }
+      }
     }
   }
+`
+
+const Index = (majorid)=>{
+  const { data, loading } = useQuery(
+    QUERY_REPORTS, {
+        variables:{
+            major_id:parseInt(majorid.majorid),
+        }
+    }
+  );
+
+  if (loading) return <p>Loading...</p>;
+
+  return(
+    <div></div>
+  )
+}
+
+export default Index
+
+// class ReportLists extends React.Component {
+//   constructor(props){
+//     super(props)
+//     this.state = {
+      
+//     }
+//   }
   // Polling: provides near-real-time synchronization with
   // your server by causing a query to execute periodically
   // at a specified interval
@@ -55,12 +69,12 @@ class ReportLists extends React.Component {
   
   
   
-  render (){
-    return(
-      <React.Fragment>
+  // render (){
+  //   return(
+  //     <React.Fragment>
 
-      </React.Fragment>
-    )
+  //     </React.Fragment>
+  //   )
 
     // // should handle loading status
     // if (loading) return <p>Loading...</p>
@@ -130,9 +144,9 @@ class ReportLists extends React.Component {
     //     )
     //   )
     // )
-  }
+//   }
   
-}
+// }
 
 // const QUERY_REPORTS = gql` query ReportsById($major_id: Int) {
 //   reportsById(majorId: $major_id){
@@ -159,5 +173,3 @@ class ReportLists extends React.Component {
 // const A = graphql( QUERY_REPORTS)(ReportLists)
 
 // export default A
-
-export default ReportLists
