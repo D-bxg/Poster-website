@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Layout, Menu, } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import { UserOutlined, LaptopOutlined, NotificationOutlined, CalendarOutlined } from '@ant-design/icons';
 
 import Date from '../Date';
 
@@ -22,17 +22,10 @@ class index extends React.Component {
             
             
                 <Sider collapsible = {true} style={{width: '30rem'}}>
-                    <Menu
-                    mode="vertical"
-                    defaultOpenKeys={['sub1']}
-                    defaultSelectedKeys={['1']}
-                    theme= {"dark"}
-                    
-                    >
-                        <SubMenu key="sub0" icon={<UserOutlined />} title="subnav 1">
+                    <Menu mode="vertical" theme= {"dark"}>
+                        <SubMenu key="sub0" icon={<CalendarOutlined />} title="选择讲座时间">
                             <Date></Date>
                         </SubMenu>
-                        
                         <SubMenu key="sub1" icon={<UserOutlined />} title="subnav 1">
                             <Menu.Item key="1">option1</Menu.Item>
                             <Menu.Item key="2">option2</Menu.Item>
