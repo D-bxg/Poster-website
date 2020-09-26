@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './components/App/index' ;
+// 引入ant design
+import 'antd/dist/antd.css';
 
 import * as serviceWorker from './serviceWorker';
+// 引入样式
+import './style.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
