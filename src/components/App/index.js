@@ -9,6 +9,8 @@ import { createHashHistory } from "history";
 import Home from './Home' ;//导航页面
 import Details from './Details';//详情页面
 
+
+
 const history = createHashHistory();
 
 class App extends React.Component {

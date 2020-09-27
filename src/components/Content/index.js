@@ -1,49 +1,18 @@
 import React from 'react';
 // 引入Apollo
-import { gql } from 'apollo-boost';
-import { useQuery } from 'react-apollo';
+// import { gql } from 'apollo-boost';
+// import { useQuery } from 'react-apollo';
 // 引入ant design样式
-import { Layout, Breadcrumb } from 'antd';
+import { Layout, Breadcrumb, Row, Col } from 'antd';
+
+
+import ReportLists from '../ReportLists';
 
 import './style.css';
 
 const { Content, } = Layout;
 
-const QUERY_REPORTS = gql`
-    query {
-    # Note that fields names become camelcased
-        reportsById{
-            edges {
-                node {
-                    id, 
-                    date, 
-                    time, 
-                    name, 
-                    occupation, 
-                    title, 
-                    content,
-                    platform,
-                    step, 
-                    reportId,
-                    majorId,
-                    priorId,
-                    nextId,
-                }
-            }
-        }
-    }
-`
 const Index = (majorid)=>{
-    const { data, loading } = useQuery(
-        QUERY_REPORTS, {
-            variables:{
-                major_id:parseInt(majorid.majorid),
-            }
-        }
-    );
-
-    if (loading) return <p>Loading...</p>;
-
     return (
             <Layout style={{ padding: '0 24px 24px' , height: '100vh' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
@@ -59,7 +28,7 @@ const Index = (majorid)=>{
                     minHeight: 280,
                 }}
                 >
-                Content
+                     
                 </Content>
             </Layout>
         );

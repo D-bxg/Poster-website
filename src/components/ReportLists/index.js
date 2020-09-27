@@ -1,13 +1,17 @@
 import React from 'react';
 // // Apollo组件引用
-import { graphql, useQuery } from 'react-apollo';
+import { useQuery } from 'react-apollo';
 import { gql } from 'apollo-boost';
 // // React的Router的Link标签引用
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import { render } from '@testing-library/react';
+import { Card, Avatar,} from 'antd';
+import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+
+const { Meta } = Card;
 
 const QUERY_REPORTS = gql`
-  query ReportsById($$major_id: Int){
+  query ReportsById($major_id: Int){
   # Note that fields names become camelcased
     reportsById(majorId: $major_id){
       edges {
@@ -35,15 +39,42 @@ const Index = (majorid)=>{
   const { data, loading } = useQuery(
     QUERY_REPORTS, {
         variables:{
-            major_id:parseInt(majorid.majorid),
+            major_id:parseInt(majorid),
         }
     }
   );
 
   if (loading) return <p>Loading...</p>;
 
-  return data.
+  return data.reportsById.edges.map(
+    ({ node },idx) => (
+      <div style={{float: 'left'}} key={node.reportId}>
+        <Link to={'/details/r/' + node.reportId + '/n/' + (idx + 1)}>
+            <Card
+              style={{ width: 300 }}
+              cover={
+                <img
+                  alt="example"
+                  src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                />
+              }
+              actions={[
+                <SettingOutlined key="setting" />,
+                <EditOutlined key="edit" />,
+                <EllipsisOutlined key="ellipsis" />,
+              ]}
+            >
+              <Meta
+                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                title="Card title"
+                description="This is the description"
+              />
+            </Card>
+        </Link>
+      </div>
+    )
   
+  )
 }
 
 export default Index
