@@ -3,7 +3,7 @@ import React from 'react';
 import { graphql, useQuery } from 'react-apollo';
 import { gql } from 'apollo-boost';
 // // React的Router的Link标签引用
-// import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import { render } from '@testing-library/react';
 import { Typography, Divider } from 'antd';
 import { Layout, Breadcrumb, Row, Col } from 'antd';
@@ -18,6 +18,7 @@ const QUERY_REPORTS = gql`
     reportsById(reportId: $report_id){
       edges {
         node {
+          priorId,
           id, 
           date, 
           time, 
@@ -31,6 +32,7 @@ const QUERY_REPORTS = gql`
           majorId,
           priorId,
           nextId,
+          
         }
       }
     }
@@ -50,23 +52,9 @@ const Index = (reportid)=>{
 
   return data.reportsById.edges.map(
     ({node}, key)=>(
-      <div style={{float: 'left'}} key={node.reportId}>
-        <Layout style={{ padding: '0 24px 24px' , height: '100vh' }}>
-                <Breadcrumb style={{ margin: '16px 0' }}>
-                    <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>List</Breadcrumb.Item>
-                    <Breadcrumb.Item>App</Breadcrumb.Item>
-                </Breadcrumb>
-                <Content
-                className="site-layout-background"
-                style={{
-                    padding: 24,
-                    margin: 0,
-                    minHeight: 280,
-                }}
-                >
+      <div  key={node.reportId}>
                   <Typography>
-                    <Title>Introduction</Title>
+                    <Title>{node.title}</Title>
                     <Paragraph>
                       In the process of internal desktop applications development, many different design specs and
                       implementations would be involved, which might cause designers and developers difficulties and
@@ -141,11 +129,14 @@ const Index = (reportid)=>{
                     <Paragraph>
                       按<Text keyboard>Esc</Text>键退出阅读……
                     </Paragraph>
+                    
+                    <NavLink to={`/details/r/1/n/${node.nextId}`}>下一页</NavLink>
+
+                  
                   </Typography>
-                </Content>
-            </Layout>
-        
-      </div>
+                
+        </div>
+      
       )
   )
    

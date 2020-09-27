@@ -12,7 +12,7 @@ import './style.css';
 
 const { Content, } = Layout;
 
-const Index = (majorid)=>{
+const Index = (props)=>{
     return (
             <Layout style={{ padding: '0 24px 24px' , height: '100vh' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
@@ -28,7 +28,7 @@ const Index = (majorid)=>{
                     minHeight: 280,
                 }}
                 >
-                     
+                    {props.children}
                 </Content>
             </Layout>
         );

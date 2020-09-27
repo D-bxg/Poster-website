@@ -49,8 +49,9 @@ class Details extends React.Component{
         {/* 文章栏 */}
         <Content >
             <div style={{float: 'left', margin: 10}}>
-              <Report></Report>
-              <ReportLists majorid = {this.props.match.params.majorid}></ReportLists>
+              <Report reportid={this.props.match.params.reportid} 
+            num={this.props.match.params.priorId}></Report>
+              
             </div>
          </Content>
 

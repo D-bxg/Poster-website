@@ -39,7 +39,7 @@ const Index = (majorid)=>{
   const { data, loading } = useQuery(
     QUERY_REPORTS, {
         variables:{
-            major_id:parseInt(majorid),
+            major_id:parseInt(majorid.majorid),
         }
     }
   );
