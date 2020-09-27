@@ -22,7 +22,7 @@ class App extends React.Component {
                         <Redirect to='/index/1' />
                     )} />
                     <Route path='/index/:majorid' component={Home} />{/*此处为导航页面*/}
-                    <Route path="/details/r/:reportid/n/:num" component={Details} />{/*此处为导航页面*/}
+                    <Route exact path="/details/r/:reportid/n/:num" component={Details} />{/*此处为导航页面*/}
                 </Switch>
             </Router>
         )

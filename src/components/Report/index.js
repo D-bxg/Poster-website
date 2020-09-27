@@ -129,12 +129,12 @@ const Index = (reportid)=>{
                     <Paragraph>
                       按<Text keyboard>Esc</Text>键退出阅读……
                     </Paragraph>
-                    
-                    <NavLink to={`/details/r/1/n/${node.nextId}`}>下一页</NavLink>
+
+                      
 
                   
                   </Typography>
-                
+                  <NavLink to={`/details/r/${node.reportId}/n/${key+2}`}>下一页 </NavLink>
         </div>
       
       )

@@ -9,7 +9,7 @@ import { Row, Col, Layout } from 'antd';
 
 // Apollo引用
 // React的Router的Link标签引用
-// import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 // 自定义组件引用
 // import ReportLists from "../../ReportLists";//详情页面组件，稍后会进行拆分（2020年9月18日10:00:19）
 import Header from '../../Header';
@@ -67,7 +67,7 @@ class Details extends React.Component{
   }
 }
 
-export default Details
+export default withRouter(Details)
 
 // import React from 'react';
 // import { useQuery } from 'react-apollo';
