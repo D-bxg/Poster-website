@@ -7,9 +7,9 @@ import { gql } from 'apollo-boost';
 // import { render } from '@testing-library/react';
 
 const QUERY_REPORTS = gql`
-  query ReportsById($report_id: Int){
+  query ReportsById($$major_id: Int){
   # Note that fields names become camelcased
-    reportsById(reportId: $report_id){
+    reportsById(majorId: $major_id){
       edges {
         node {
           id, 
@@ -42,9 +42,8 @@ const Index = (majorid)=>{
 
   if (loading) return <p>Loading...</p>;
 
-  return(
-    <div></div>
-  )
+  return data.
+  
 }
 
 export default Index
