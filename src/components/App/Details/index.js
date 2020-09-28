@@ -1,13 +1,25 @@
 import React from 'react';
 // Apollo组件
-// import ApolloClient from 'apollo-boost';
-// import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
 //自定义组件
 // import ReportDetails from "../../Report";//详情组件，稍后会把该组件进行拆分（2020年9月18日09:58:25）
+// ant design的引用
+import { Row, Col, Layout } from 'antd';
 
-// const client = new ApolloClient({
-//   uri: 'http://47.104.225.253/graphql/', // your GraphQL Server 
-// });
+// Apollo引用
+// React的Router的Link标签引用
+import {withRouter} from 'react-router-dom';
+// 自定义组件引用
+// import ReportLists from "../../ReportLists";//详情页面组件，稍后会进行拆分（2020年9月18日10:00:19）
+import Header from '../../Header';
+import Content from '../../Content';
+import Sider from '../../Sider';
+import Report from '../../Report';
+
+const client = new ApolloClient({
+  uri: 'http://182.92.176.49/graphql/', // your GraphQL Server 
+});
 
 class Details extends React.Component{
   constructor(props){
@@ -19,23 +31,43 @@ class Details extends React.Component{
 
   render(){
       return(
-        <React.Fragment>
+        
+        <ApolloProvider client={client}>
+      
+        {/* 头 */}
+        <Row>
 
-        </React.Fragment>
-        // <ApolloProvider client={client}>
+            <Col span = {24}><Header></Header></Col>
+    
+        </Row>
+        {/* 主体 */}
         
-        //   {/* <ReportDetails 
-        //     reportid={this.props.match.params.reportid} 
-        //     num={this.props.match.params.num}
-        //   />此处为细节页面组件 */}
+        {/* 侧边栏 */}
+        <Layout style={{marginTop: "6.3rem", height: 'auto'}}>
+          <Sider></Sider>
+
+        {/* 文章栏 */}
+        <Content >
+            <div style={{float: 'left', margin: 10}}>
+              <Report reportid={this.props.match.params.reportid} 
+            num={this.props.match.params.priorId}></Report>
+              
+            </div>
+         </Content>
+
+         
+
+         </Layout>
+        {/* 脚 */}
         
-        // </ApolloProvider>
+      
+      </ApolloProvider>
         
       )
   }
 }
 
-export default Details
+export default withRouter(Details)
 
 // import React from 'react';
 // import { useQuery } from 'react-apollo';

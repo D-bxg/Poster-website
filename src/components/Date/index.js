@@ -2,7 +2,9 @@ import React from 'react';
 
 import { Calendar } from 'antd';
 
-class index extends React.Component {
+import './style.css';
+
+class Date extends React.Component {
     constructor(props) {
         super(props);
         this.state = {  };
@@ -14,11 +16,11 @@ class index extends React.Component {
 
     render() {
         return (
-            <div theme="dark" >
-                <Calendar style={{ width: '100%', margin: '0 0 2rem' }} fullscreen={false} onPanelChange={this.onPanelChange}  />
+            <div className="site-calendar-demo-card">
+                <Calendar fullscreen={false} onPanelChange={this.onPanelChange} />
             </div>
         );
     }
 }
 
-export default index;
+export default Date;
