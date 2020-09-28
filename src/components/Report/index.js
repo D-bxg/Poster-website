@@ -134,7 +134,7 @@ const Index = (reportid)=>{
 
                   
                   </Typography>
-                  <NavLink to={`/details/r/${node.reportId}/n/${key+2}`}>下一页 </NavLink>
+                  <NavLink to={`/details/r/${node.reportId+1}/n/${node.reportId+1}`}>下一页 </NavLink>
         </div>
       
       )

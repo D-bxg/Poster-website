@@ -29,8 +29,8 @@ class index extends React.Component {
                             <Date></Date>
                         </SubMenu>
                         <SubMenu key="sub1" icon={<UserOutlined />} title="subnav 1">
-                            <Link to={}><Menu.Item key="1">option1</Menu.Item></Link>
-                            <Menu.Item key="2">option2</Menu.Item>
+                            <Menu.Item key="1"><Link to={'/index/1'}>option1</Link></Menu.Item>
+                            <Menu.Item key="2"><Link to={'/index/2'}>option2</Link></Menu.Item>
                             <Menu.Item key="3">option3</Menu.Item>
                             <Menu.Item key="4">option4</Menu.Item>
                         </SubMenu>

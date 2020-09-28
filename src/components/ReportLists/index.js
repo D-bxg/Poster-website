@@ -66,7 +66,7 @@ const Index = (majorid)=>{
             >
               <Meta
                 avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                title="Card title"
+                title={node.title}
                 description="This is the description"
               />
             </Card>
